@@ -40,11 +40,6 @@ class GraphConvolution(Module):
 class GraphAggregation(Module):
 
     def __init__(self, in_features, out_features, b_dim, dropout):
-        # print("in_features:", in_features)
-        # print("out_features:", out_features)
-        # print("b_dim:", b_dim)
-        # print("dropout:", dropout)
-
         super(GraphAggregation, self).__init__()
         self.sigmoid_linear = nn.Sequential(nn.Linear(in_features+b_dim+5, out_features),
                                             nn.Sigmoid())
